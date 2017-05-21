@@ -1,16 +1,16 @@
 Github code
 
-echo "# Dirty-Data-Team-Assignment" >> README.md
+echo "# Dirty-Data" >> README.md
 git init
 git add README.md
 git commit -m "first commit"
-git remote add origin https://github.com/IndhujhaN/Dirty-Data-Team-Assignment.git
+git remote add origin https://github.com/IndhujhaN/Dirty-Data.git
 git push -u origin master
-…or push an existing repository from the command line
+â€¦or push an existing repository from the command line
 
-git remote add origin https://github.com/IndhujhaN/Dirty-Data-Team-Assignment.git
+git remote add origin https://github.com/IndhujhaN/Dirty-Data.git
 git push -u origin master
-…or import code from another repository
+â€¦or import code from another repository
 You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
 
 Used other options with front end
@@ -23,7 +23,7 @@ Removing special characters,spaces
 s<- read.csv(file="D:/r_proj/Dirty-Data/dirty_data.csv", header = TRUE, strip.white=TRUE)
 head(s)
 //In the command below replacing special characters specific to this document
-s1<-data.frame(lapply(s, gsub, pattern = "Ì´|Ì|´|Š", replacement = " "))
+s1<-data.frame(lapply(s, gsub, pattern = "ÃŒÂ´|ÃŒ|Â´|Å ", replacement = " "))
 
 //cleaning whitespaces
 install.packages("stringr", dependencies=TRUE)
