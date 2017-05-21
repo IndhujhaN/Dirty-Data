@@ -1,0 +1,64 @@
+Github code
+
+echo "# Dirty-Data-Team-Assignment" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/IndhujhaN/Dirty-Data-Team-Assignment.git
+git push -u origin master
+…or push an existing repository from the command line
+
+git remote add origin https://github.com/IndhujhaN/Dirty-Data-Team-Assignment.git
+git push -u origin master
+…or import code from another repository
+You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
+
+Used other options with front end
+
+R-code
+
+Removing special characters,spaces
+
+//In the command below reading the CSV file and cleaning white spaces
+s<- read.csv(file="D:/r_proj/Dirty-Data/dirty_data.csv", header = TRUE, strip.white=TRUE)
+head(s)
+//In the command below replacing special characters specific to this document
+s1<-data.frame(lapply(s, gsub, pattern = "Ì´|Ì|´|Š", replacement = " "))
+
+//cleaning whitespaces
+install.packages("stringr", dependencies=TRUE)
+s2<- data.frame(lapply(s1, trimws))
+head(s2,15)
+
+//Exporting the Excel
+write.table(s2, "D:/r_proj/Dirty-Data/dirty_data.csv", sep="")
+
+Replacing street2 with spaces
+
+getwd()
+
+setwd("/Users/spatel5/Dirty-Data")
+
+data = read.csv("dirty_data.csv")
+
+street1 = data$Street
+
+street2 = data$Street.2
+
+street2
+
+for(i in 1:length(street1)) {
+
+  if(street2[i] %in% street1[i]){
+
+   street2[i] <- NA
+
+  }
+
+}
+
+street2[is.na(street2)] = " "
+
+data$Street.2 = street2
+
+write.csv(data, file = "dirty_data.csv")
